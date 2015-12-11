@@ -24,6 +24,7 @@
 #define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
 #define RGB(r, g, b) RGBA(r, g, b, 1.f)
 #define RandomColor RGB(arc4random()%256, arc4random()%256, arc4random()%256)
+#define RandomContant(min,max) arc4random()%(max+1)+min
 
 #pragma mark - 系统颜色设置
 

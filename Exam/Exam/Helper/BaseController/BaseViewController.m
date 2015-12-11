@@ -34,7 +34,7 @@
     self.view.backgroundColor = RandomColor;
     
     //加载数据
-    [self loadData];
+    [self initData];
     
     //创建视图
     [self createView];
@@ -49,7 +49,7 @@
 }
 
 //加载数据
-- (void)loadData {
+- (void)initData {
     //不做实现，只为了取消警告
 }
 

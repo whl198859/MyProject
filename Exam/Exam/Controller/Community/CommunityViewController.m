@@ -1,34 +1,22 @@
 //
-//  RootViewController.m
+//  CommunityViewController.m
 //  Exam
 //
 //  Created by wanghailong on 15/12/11.
 //  Copyright © 2015年 Hailong.wang. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "CommunityViewController.h"
 
-@interface RootViewController ()
+@interface CommunityViewController ()
 
 @end
 
-@implementation RootViewController
+@implementation CommunityViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
-- (void)loadData {
-    NSLog(@"加载数据");
-}
-
-- (void)createView {
-    NSLog(@"创建视图");
-}
-
-- (void)addTouchAction {
-    NSLog(@"添加行为");
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

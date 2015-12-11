@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AFNetworking/AFNetworking.h>
+#import "NetRequest.h"
 
 @interface BaseViewController : UIViewController
 
 //创建视图
 - (void)createView;
 //加载数据
-- (void)loadData;
+- (void)initData;
 //添加行为
 - (void)addTouchAction;
 //键盘即将显示

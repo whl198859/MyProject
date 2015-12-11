@@ -1,5 +1,5 @@
 //
-//  RootViewController.h
+//  CommunityViewController.h
 //  Exam
 //
 //  Created by wanghailong on 15/12/11.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface RootViewController : BaseViewController
+@interface CommunityViewController : BaseViewController
 
 @end
