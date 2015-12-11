@@ -1,0 +1,39 @@
+//
+//  DefineHeader.pch
+//  Exam
+//
+//  Created by wanghailong on 15/12/11.
+//  Copyright © 2015年 Hailong.wang. All rights reserved.
+//
+
+#ifndef DefineHeader_pch
+#define DefineHeader_pch
+
+#pragma mark - 常数
+
+#define DefaultHeight 44
+#define StatusBarHeight 20
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+#define NavigationBarHeight 44
+#define TabBarHeight 48
+#define ToolBarHeight 44
+
+#pragma mark - 常用方法
+
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
+#define RGB(r, g, b) RGBA(r, g, b, 1.f)
+#define RandomColor RGB(arc4random()%256, arc4random()%256, arc4random()%256)
+
+#pragma mark - 系统颜色设置
+
+#define ClearColor [UIColor clearColor]
+#define WhiteColor [UIColor whiteColor]
+#define BlackColor [UIColor blackColor]
+#define OrangeColor [UIColor orangeColor]
+#define RedColor [UIColor redColor]
+#define BlueColor [UIColor blueColor]
+#define GreenColor [UIColor greenColor]
+#define YellowColor [UIColor yellowColor]
+
+#endif /* DefineHeader_pch */
