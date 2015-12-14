@@ -10,7 +10,7 @@
 #define DefineHeader_pch
 
 #import "UIView+Addition.h"
-#import "ObjectFactory.h"
+#import "Factory.h"
 
 #pragma mark - 常数
 

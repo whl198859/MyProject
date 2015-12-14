@@ -8,34 +8,58 @@
 
 #import "HomeBannerTableViewCell.h"
 #import <UIImageView+WebCache.h>
+#import "Factory.h"
+
+#define ImageViewTagValue 100
 
 @implementation HomeBannerTableViewCell
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 170)];
-//        self.title = [[UILabel alloc] initWithFrame:<#(CGRect)#>]
+- (void)setBannerData:(JSONModelArray *)data {
+    if (!data) {
+        return;
     }
-    return self;
+    self.dataSource = data;
+    
+    self.scrollView.delegate = self;
+    self.scrollView.contentSize = CGSizeMake(data.count * ScreenWidth, 0);
+    
+    [self createUIContent];
 }
 
-- (void)setBannerData:(JSONModelArray *)data {
-    if (self.scrollView.subviews.count == 0) {
-        
-        for (int i = 0; i < data.count; i ++) {
-            HomeBannerModel *model = [data objectAtIndex:i];
-            UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(i * ScreenWidth, 0, ScreenWidth, 170)];
+- (void)createUIContent {
+    if (![self.scrollView viewWithTag:ImageViewTagValue]) {
+        for (int i = 0; i < self.dataSource.count; i ++) {
+            HomeBannerModel *model = [self.dataSource objectAtIndex:i];
+            UIImageView *image = [self.scrollView viewWithTag:ImageViewTagValue + i];
+            if (!image) {
+                image = [[UIImageView alloc] initWithFrame:CGRectMake(i * ScreenWidth, 0, ScreenWidth, 170)];
+                image.tag = ImageViewTagValue + i;
+                [self.scrollView addSubview:image];
+            }
             [image sd_setImageWithURL:[NSURL URLWithString:model.pic]];
+            if (i == 0) {
+                self.title.text = model.title;
+            }
         }
     }
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    int page = floorf(scrollView.contentOffset.x - scrollView.width)/scrollView.width + 1;
+    HomeBannerModel *model = [self.dataSource objectAtIndex:page];
+    if ([model.title length] != 0) {
+        self.title.hidden = NO;
+        self.title.text = model.title;
+    } else {
+        self.title.hidden = YES;
+    }
 }
 
 @end

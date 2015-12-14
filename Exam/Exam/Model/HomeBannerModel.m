@@ -10,8 +10,4 @@
 
 @implementation HomeBannerModel
 
-+ (JSONKeyMapper *)keyMapper {
-    return [[JSONKeyMapper alloc] initWithDictionary:@{@"featured_banners2":@"banner", @"temai_coupon_recommend":@"recommend", @"photos_tag_style_space_top20":@"topPhoto"}];
-}
-
 @end

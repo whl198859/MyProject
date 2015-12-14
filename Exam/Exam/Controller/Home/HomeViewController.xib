@@ -16,9 +16,10 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2fF-SJ-fEd">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2fF-SJ-fEd">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="P0R-wQ-Iyy"/>
                         <outlet property="delegate" destination="-1" id="s9h-jZ-eOB"/>
@@ -32,7 +33,7 @@
                 <constraint firstAttribute="trailing" secondItem="2fF-SJ-fEd" secondAttribute="trailing" id="fD4-6Q-NMX"/>
                 <constraint firstAttribute="bottom" secondItem="2fF-SJ-fEd" secondAttribute="bottom" id="vNe-Mw-yoj"/>
             </constraints>
-            <point key="canvasLocation" x="374" y="279"/>
+            <point key="canvasLocation" x="164" y="323"/>
         </view>
     </objects>
 </document>

@@ -15,6 +15,8 @@
 #import "HomeItemCollectionModel.h"
 #import "HomeItemPageModel.h"
 #import "HomeItemSubjectModel.h"
+#import "HomeBannerTableViewCell.h"
+#import "HomeRecommendTableViewCell.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
     NSInteger _pageNumber;
@@ -33,7 +35,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"集美家";
+    
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Identifier"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomeBannerTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"banner"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomeRecommendTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"recommend"];
 }
 
 - (void)initData {
@@ -50,10 +56,9 @@
         NSError *error = nil;
         NSDictionary *dataSource = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
         NSDictionary *data = [dataSource objectForKey:@"data"];
-        NSLog(@"%@", data);
         self.banner = [[JSONModelArray alloc] initWithArray:[[data objectForKey:@"featured_banners2"] objectForKey:@"banners"] modelClass:[HomeBannerModel class]];
-        self.recommend = [[JSONModelArray alloc] initWithArray:[data objectForKey:@"temai_coupon_recommend"] modelClass:[HomeBannerModel class]];
-        self.top = [[JSONModelArray alloc] initWithArray:[data objectForKey:@"photos_tag_style_space_top20"] modelClass:[HomeBannerModel class]];
+        self.recommend = [[JSONModelArray alloc] initWithArray:[data objectForKey:@"temai_coupon_recommend"] modelClass:[HomeRecommendModel class]];
+        self.top = [[JSONModelArray alloc] initWithArray:[data objectForKey:@"photos_tag_style_space_top20"] modelClass:[HomeTopModel class]];
         //将数据整理成Model
         [weakSelf dataFactory:data];
         [weakSelf.tableView reloadData];
@@ -89,13 +94,43 @@
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSource.count + 1;
+    NSInteger number = 0;
+    if (self.banner) {
+        number ++;
+    }
+    if (self.recommend) {
+        number ++;
+    }
+    if (self.dataSource.count != 0) {
+        number += self.dataSource.count;
+    }
+    return number;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Identifier" forIndexPath:indexPath];
-//    NSLog(@"%@", [[self.dataSource objectAtIndex:indexPath.row] class]);
-    return cell;
+    if (indexPath.row == 0) {
+        HomeBannerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"banner" forIndexPath:indexPath];
+        [cell setBannerData:self.banner];
+        return cell;
+    } else if (indexPath.row == 1) {
+        HomeRecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommend" forIndexPath:indexPath];
+        [cell setRecommendData:self.recommend];
+        return cell;
+    } else {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Identifier" forIndexPath:indexPath];
+        NSLog(@"%@", [[self.dataSource objectAtIndex:indexPath.row - 2] class]);
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 170.f;
+    } else if (indexPath.row == 1) {
+        return 190.f;
+    } else {
+        return 44.f;
+    }
 }
 
 @end

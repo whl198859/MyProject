@@ -6,9 +6,9 @@
 //  Copyright © 2015年 Hailong.wang. All rights reserved.
 //
 
-#import "ObjectFactory.h"
+#import "Factory.h"
 
-@implementation ObjectFactory
+@implementation Factory
 
 #pragma mark - 创建button
 + (UIButton *)createButtonWithframe:(CGRect)frame backgroundColor:(UIColor *)color target:(id)target action:(SEL)selector {
@@ -58,33 +58,35 @@
 }
 
 #pragma mark - 创建label
-
 + (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame {
     return [self createLabelWithTitle:title frame:frame fontSize:14.f];
 }
 
 + (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame textColor:(UIColor *)color {
-    return [self createLabelWithTitle:title frame:frame textColor:color fontSize:14.f];
+    return [self createLabelWithTitle:title frame:frame backgroundColor:ClearColor textColor:color fontSize:14.f];
 }
 
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame fontSize:(CGFloat)size {
-    return [self createLabelWithTitle:title frame:frame textColor:[UIColor blackColor] fontSize:size];
++ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame fontSize:(CGFloat)fontSize {
+    return [self createLabelWithTitle:title frame:frame backgroundColor:ClearColor textColor:BlackColor fontSize:fontSize];
 }
 
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame textColor:(UIColor *)color fontSize:(CGFloat)size {
++ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)color fontSize:(CGFloat)fontSize {
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     label.text = title;
     label.textColor = color;
-    label.font = [UIFont systemFontOfSize:size];
+    label.backgroundColor = backgroundColor;
+    label.font = [UIFont systemFontOfSize:fontSize];
     return label;
 }
 
+#pragma mark - 创建View
 + (UIView *)createViewWithBackgroundColor:(UIColor *)color frame:(CGRect)frame {
     UIView *view = [[UIView alloc] initWithFrame:frame];
     view.backgroundColor = color;
     return view;
 }
 
+#pragma mark - 创建textField
 + (UITextField *)createViewWithText:(NSString *)text frame:(CGRect)frame placeholder:(NSString *)placeholder textColor:(UIColor *)color borderStyle:(UITextBorderStyle)borderStyle {
     UITextField *textField = [[UITextField alloc] initWithFrame:frame];
     textField.placeholder = placeholder;

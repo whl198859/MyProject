@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "HomeBannerModel.h"
 
-@interface HomeBannerTableViewCell : UITableViewCell
+@interface HomeBannerTableViewCell : UITableViewCell <UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UILabel *title;
+@property (nonatomic, strong) JSONModelArray *dataSource;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, strong) IBOutlet UILabel *title;
 
 - (void)setBannerData:(JSONModelArray *)data;
 

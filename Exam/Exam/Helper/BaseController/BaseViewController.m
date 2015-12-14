@@ -30,8 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = RandomColor;
+    self.navigationController.navigationBar.barTintColor = RGB(106, 227, 158);
+    self.navigationController.navigationBar.translucent = NO;
     
     //加载数据
     [self initData];

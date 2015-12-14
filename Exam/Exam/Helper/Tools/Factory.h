@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ObjectFactory : NSObject
+@interface Factory : NSObject
 
 //创建button的工厂
 + (UIButton *)createButtonWithframe:(CGRect)frame backgroundColor:(UIColor *)color target:(id)target action:(SEL)selector;
@@ -22,8 +22,8 @@
 //创建label的工厂
 + (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame;
 + (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame textColor:(UIColor *)color;
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame fontSize:(CGFloat)size;
-+ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame textColor:(UIColor *)color fontSize:(CGFloat)size;
++ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame fontSize:(CGFloat)fontSize;
++ (UILabel *)createLabelWithTitle:(NSString *)title frame:(CGRect)frame backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)color fontSize:(CGFloat)fontSize;
 
 //创建View的工厂
 + (UIView *)createViewWithBackgroundColor:(UIColor *)color frame:(CGRect)frame;
