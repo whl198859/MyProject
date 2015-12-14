@@ -12,6 +12,7 @@
 @interface HomeBannerTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UILabel *title;
 
 - (void)setBannerData:(JSONModelArray *)data;
 

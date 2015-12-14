@@ -7,6 +7,7 @@
 //
 
 #import "HomeBannerTableViewCell.h"
+#import <UIImageView+WebCache.h>
 
 @implementation HomeBannerTableViewCell
 
@@ -14,15 +15,18 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 170)];
+//        self.title = [[UILabel alloc] initWithFrame:<#(CGRect)#>]
     }
     return self;
 }
 
 - (void)setBannerData:(JSONModelArray *)data {
     if (self.scrollView.subviews.count == 0) {
+        
         for (int i = 0; i < data.count; i ++) {
+            HomeBannerModel *model = [data objectAtIndex:i];
             UIImageView *image = [[UIImageView alloc] initWithFrame:CGRectMake(i * ScreenWidth, 0, ScreenWidth, 170)];
-            image.image
+            [image sd_setImageWithURL:[NSURL URLWithString:model.pic]];
         }
     }
     

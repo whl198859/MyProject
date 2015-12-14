@@ -9,6 +9,9 @@
 #ifndef DefineHeader_pch
 #define DefineHeader_pch
 
+#import "UIView+Addition.h"
+#import "ObjectFactory.h"
+
 #pragma mark - 常数
 
 #define DefaultHeight 44
