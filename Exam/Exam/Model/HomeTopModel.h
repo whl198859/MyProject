@@ -8,6 +8,10 @@
 
 #import <JSONModel/JSONModel.h>
 
+@protocol HomeTopModel <NSObject>
+
+@end
+
 @interface HomeTopModel : JSONModel
 
 PropertyCopyString(name);

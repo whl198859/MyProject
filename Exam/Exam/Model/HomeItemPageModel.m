@@ -10,4 +10,16 @@
 
 @implementation HomeItemPageModel
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict {
+    self = [super init];
+    if (self) {
+        self.type = [dict objectForKey:@"item_type"];
+        self.pic = [dict objectForKey:@"pic"];
+        self.title = [dict objectForKey:@"title"];
+        self.descr = [dict objectForKey:@"descr"];
+        self.caseID = [dict objectForKey:@"id"];
+    }
+    return self;
+}
+
 @end

@@ -27,6 +27,7 @@
 		BC426C571C1AC9F4007F8285 /* HomeItemPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC426C561C1AC9F4007F8285 /* HomeItemPageModel.m */; };
 		BC426C5A1C1AD106007F8285 /* HomeItemSubjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC426C591C1AD106007F8285 /* HomeItemSubjectModel.m */; };
 		BC426C5D1C1AD460007F8285 /* HomeDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC426C5C1C1AD460007F8285 /* HomeDataModel.m */; };
+		BC7D41191C1E5748008C7B23 /* HomeBannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7D41181C1E5748008C7B23 /* HomeBannerTableViewCell.m */; };
 		D040252C1C17DDFC00FF7B43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252B1C17DDFC00FF7B43 /* main.m */; };
 		D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252E1C17DDFC00FF7B43 /* AppDelegate.m */; };
 		D04025371C17DDFC00FF7B43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04025361C17DDFC00FF7B43 /* Assets.xcassets */; };
@@ -73,6 +74,8 @@
 		BC426C591C1AD106007F8285 /* HomeItemSubjectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeItemSubjectModel.m; sourceTree = "<group>"; };
 		BC426C5B1C1AD460007F8285 /* HomeDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeDataModel.h; sourceTree = "<group>"; };
 		BC426C5C1C1AD460007F8285 /* HomeDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeDataModel.m; sourceTree = "<group>"; };
+		BC7D41171C1E5748008C7B23 /* HomeBannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBannerTableViewCell.h; sourceTree = "<group>"; };
+		BC7D41181C1E5748008C7B23 /* HomeBannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBannerTableViewCell.m; sourceTree = "<group>"; };
 		D04025271C17DDFC00FF7B43 /* Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D040252B1C17DDFC00FF7B43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D040252D1C17DDFC00FF7B43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 		BC36E4FA1C1A6F7100CC3D90 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC7D41171C1E5748008C7B23 /* HomeBannerTableViewCell.h */,
+				BC7D41181C1E5748008C7B23 /* HomeBannerTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				BC426C481C1AC3C4007F8285 /* HomePageModel.m in Sources */,
 				BC426C4E1C1AC635007F8285 /* HomeRecommendModel.m in Sources */,
 				BC426C2A1C1A9F0D007F8285 /* CustomNavigationController.m in Sources */,
+				BC7D41191C1E5748008C7B23 /* HomeBannerTableViewCell.m in Sources */,
 				D040252C1C17DDFC00FF7B43 /* main.m in Sources */,
 				BC426C5A1C1AD106007F8285 /* HomeItemSubjectModel.m in Sources */,
 				BC426C341C1AAF83007F8285 /* ExpertViewController.m in Sources */,

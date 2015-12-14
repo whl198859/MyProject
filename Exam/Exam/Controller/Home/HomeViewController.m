@@ -20,7 +20,9 @@
     NSInteger _pageNumber;
 }
 
-@property (nonatomic, strong) HomeDataModel *model;
+@property (nonatomic, strong) JSONModelArray *banner;
+@property (nonatomic, strong) JSONModelArray *recommend;
+@property (nonatomic, strong) JSONModelArray *top;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -46,20 +48,22 @@
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:kHomePage parameters:@{@"page":@(_pageNumber)} progress:NULL success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSError *error = nil;
-        weakSelf.model = [[HomeDataModel alloc] initWithData:responseObject error:&error];
+        NSDictionary *dataSource = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary *data = [dataSource objectForKey:@"data"];
+        NSLog(@"%@", data);
+        self.banner = [[JSONModelArray alloc] initWithArray:[[data objectForKey:@"featured_banners2"] objectForKey:@"banners"] modelClass:[HomeBannerModel class]];
+        self.recommend = [[JSONModelArray alloc] initWithArray:[data objectForKey:@"temai_coupon_recommend"] modelClass:[HomeBannerModel class]];
+        self.top = [[JSONModelArray alloc] initWithArray:[data objectForKey:@"photos_tag_style_space_top20"] modelClass:[HomeBannerModel class]];
         //将数据整理成Model
-        [weakSelf dataFactory:responseObject];
+        [weakSelf dataFactory:data];
         [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
 }
 
-- (void)dataFactory:(id)responseObject {
-    NSError *error = nil;
-    NSDictionary *dataSource = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
-    NSDictionary *data = [dataSource objectForKey:@"data"];
-    NSDictionary *featured = [data objectForKey:@"featured_items"];
+- (void)dataFactory:(id)dataSource {
+    NSDictionary *featured = [dataSource objectForKey:@"featured_items"];
     NSArray *items = [featured objectForKey:@"items"];
     [self arrayDataFactory:items];
 }
@@ -68,11 +72,11 @@
     for (NSDictionary *object in items) {
         id model = nil;
         if ([[object objectForKey:@"item_type"] isEqualToString:@"subject"]) {
-            model = [[HomeItemSubjectModel alloc] init];
+            model = [[HomeItemSubjectModel alloc] initWithDictionary:object];
         } else if ([[object objectForKey:@"item_type"] isEqualToString:@"collection"]) {
-            model = [[HomeItemCollectionModel alloc] init];
+            model = [[HomeItemCollectionModel alloc] initWithDictionary:object];
         } else {
-            model = [[HomeItemPageModel alloc] init];
+            model = [[HomeItemPageModel alloc] initWithDictionary:object];
         }
         [self.dataSource addObject:model];
     }
@@ -85,11 +89,12 @@
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataSource.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Identifier" forIndexPath:indexPath];
+//    NSLog(@"%@", [[self.dataSource objectAtIndex:indexPath.row] class]);
     return cell;
 }
 

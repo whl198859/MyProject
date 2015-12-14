@@ -16,4 +16,6 @@ PropertyCopyString(title);
 PropertyCopyString(descr);
 PropertyCopyString(caseID);
 
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+
 @end

@@ -13,9 +13,10 @@
 PropertyCopyString(type);
 PropertyCopyString(pic);
 PropertyCopyString(title);
-PropertyCopyString(descr);
 PropertyCopyString(count);
 PropertyCopyString(countText);
 PropertyCopyString(caseID);
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end

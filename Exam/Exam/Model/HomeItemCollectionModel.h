@@ -14,6 +14,7 @@ PropertyCopyString(type);
 PropertyCopyString(pic);
 PropertyCopyString(title);
 PropertyCopyString(subtitle);
+PropertyCopyString(subtitle1);
 PropertyCopyString(subtitle2);
 PropertyCopyString(subtitle3);
 PropertyCopyString(authorNickname);

@@ -8,6 +8,10 @@
 
 #import <JSONModel/JSONModel.h>
 
+@protocol HomeRecommendModel <NSObject>
+
+@end
+
 @interface HomeRecommendModel : JSONModel
 
 PropertyCopyString(url);

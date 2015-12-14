@@ -33,7 +33,8 @@
     for (int i = 0; i < controllers.count; i ++) {
         Class cls = NSClassFromString(controllers[i]);
         UIViewController *controller = [[cls alloc] init];
-        [subControllers addObject:controller];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+        [subControllers addObject:nav];
     }
     self.viewControllers = subControllers;
 }

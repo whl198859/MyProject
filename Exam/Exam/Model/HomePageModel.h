@@ -14,7 +14,7 @@
 @interface HomePageModel : JSONModel
 
 PropertyRetainObject(NSArray <HomeBannerModel>, banner);
-PropertyRetainObject(HomeRecommendModel, recommend);
-PropertyRetainObject(HomeTopModel, topPhoto);
+PropertyRetainObject(NSArray <HomeRecommendModel>, recommend);
+PropertyRetainObject(NSArray <HomeTopModel>, topPhoto);
 
 @end
