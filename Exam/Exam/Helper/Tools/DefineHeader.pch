@@ -25,6 +25,12 @@
 #define RGB(r, g, b) RGBA(r, g, b, 1.f)
 #define RandomColor RGB(arc4random()%256, arc4random()%256, arc4random()%256)
 #define RandomContant(min,max) arc4random()%(max+1)+min
+#define PropertyRetainObject(class, name) @property (nonatomic, retain) class *name
+#define PropertyRetainArray(name) @property (nonatomic, retain) NSArray *name
+#define PropertyRetainMutableArray(name) @property (nonatomic, retain) NSMutableArray *name
+#define PropertyRetainDictionary(name) @property (nonatomic, retain) NSDictionary *name
+#define PropertyCopyObject(class, name) @property (nonatomic, copy) class *name
+#define PropertyCopyString(name) @property (nonatomic, copy) NSString *name
 
 #pragma mark - 系统颜色设置
 
