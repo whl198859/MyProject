@@ -8,17 +8,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="banner" id="Ys7-N5-G8N" customClass="HomeBannerTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="170"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ys7-N5-G8N" id="vf5-PK-xMr">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YW6-Bp-pLc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="169.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
                     </scrollView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vbj-Yh-0L3">
-                        <rect key="frame" x="0.0" y="145" width="160" height="14"/>
+                        <rect key="frame" x="0.0" y="160" width="160" height="14"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="MBb-KG-sDA"/>
@@ -36,7 +36,7 @@
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vbj-Yh-0L3" secondAttribute="trailing" constant="50" id="No9-gi-Tle"/>
                     <constraint firstAttribute="bottom" secondItem="YW6-Bp-pLc" secondAttribute="bottom" id="RaB-Zn-O5b"/>
                     <constraint firstItem="Vbj-Yh-0L3" firstAttribute="leading" secondItem="vf5-PK-xMr" secondAttribute="leading" id="VbX-fQ-FcO"/>
-                    <constraint firstItem="Vbj-Yh-0L3" firstAttribute="top" secondItem="vf5-PK-xMr" secondAttribute="top" constant="145" id="bto-uw-AII"/>
+                    <constraint firstItem="Vbj-Yh-0L3" firstAttribute="top" secondItem="vf5-PK-xMr" secondAttribute="top" constant="160" id="bto-uw-AII"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

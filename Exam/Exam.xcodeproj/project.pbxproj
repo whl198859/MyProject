@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8795ADC77D4C93A68043FE86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06BDF21F9E7E99D8C8DB6ED9 /* libPods.a */; };
+		BC2ACD3F1C1EC4D300E3033B /* HomeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2ACD3D1C1EC4D300E3033B /* HomeCollectionCell.m */; };
+		BC2ACD401C1EC4D300E3033B /* HomeCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2ACD3E1C1EC4D300E3033B /* HomeCollectionCell.xib */; };
+		BC2ACD441C1EC4E500E3033B /* HomePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2ACD421C1EC4E500E3033B /* HomePageCell.m */; };
+		BC2ACD451C1EC4E500E3033B /* HomePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2ACD431C1EC4E500E3033B /* HomePageCell.xib */; };
+		BC2ACD491C1EC4FB00E3033B /* HomeSubjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2ACD471C1EC4FB00E3033B /* HomeSubjectCell.m */; };
+		BC2ACD4A1C1EC4FB00E3033B /* HomeSubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2ACD481C1EC4FB00E3033B /* HomeSubjectCell.xib */; };
 		BC36E4F61C1A684000CC3D90 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC36E4F51C1A684000CC3D90 /* BaseViewController.m */; };
 		BC426C271C1A9EF6007F8285 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC426C261C1A9EF6007F8285 /* CustomTabBarController.m */; };
 		BC426C2A1C1A9F0D007F8285 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC426C291C1A9F0D007F8285 /* CustomNavigationController.m */; };
@@ -43,6 +49,15 @@
 		06BDF21F9E7E99D8C8DB6ED9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		696AF8AE5E91B98BB20DA4EC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		69A8AA77B41090C4AE426829 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		BC2ACD3C1C1EC4D300E3033B /* HomeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCollectionCell.h; sourceTree = "<group>"; };
+		BC2ACD3D1C1EC4D300E3033B /* HomeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionCell.m; sourceTree = "<group>"; };
+		BC2ACD3E1C1EC4D300E3033B /* HomeCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeCollectionCell.xib; sourceTree = "<group>"; };
+		BC2ACD411C1EC4E500E3033B /* HomePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageCell.h; sourceTree = "<group>"; };
+		BC2ACD421C1EC4E500E3033B /* HomePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageCell.m; sourceTree = "<group>"; };
+		BC2ACD431C1EC4E500E3033B /* HomePageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomePageCell.xib; sourceTree = "<group>"; };
+		BC2ACD461C1EC4FB00E3033B /* HomeSubjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeSubjectCell.h; sourceTree = "<group>"; };
+		BC2ACD471C1EC4FB00E3033B /* HomeSubjectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeSubjectCell.m; sourceTree = "<group>"; };
+		BC2ACD481C1EC4FB00E3033B /* HomeSubjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeSubjectCell.xib; sourceTree = "<group>"; };
 		BC36E4F41C1A684000CC3D90 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		BC36E4F51C1A684000CC3D90 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		BC36E4F81C1A6A2900CC3D90 /* DefineHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefineHeader.pch; sourceTree = "<group>"; };
@@ -172,6 +187,15 @@
 				BCD4A6941C1EA36800DE7FAB /* HomeRecommendTableViewCell.h */,
 				BCD4A6951C1EA36800DE7FAB /* HomeRecommendTableViewCell.m */,
 				BCD4A6961C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib */,
+				BC2ACD3C1C1EC4D300E3033B /* HomeCollectionCell.h */,
+				BC2ACD3D1C1EC4D300E3033B /* HomeCollectionCell.m */,
+				BC2ACD3E1C1EC4D300E3033B /* HomeCollectionCell.xib */,
+				BC2ACD411C1EC4E500E3033B /* HomePageCell.h */,
+				BC2ACD421C1EC4E500E3033B /* HomePageCell.m */,
+				BC2ACD431C1EC4E500E3033B /* HomePageCell.xib */,
+				BC2ACD461C1EC4FB00E3033B /* HomeSubjectCell.h */,
+				BC2ACD471C1EC4FB00E3033B /* HomeSubjectCell.m */,
+				BC2ACD481C1EC4FB00E3033B /* HomeSubjectCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,9 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D040253A1C17DDFC00FF7B43 /* LaunchScreen.storyboard in Resources */,
+				BC2ACD401C1EC4D300E3033B /* HomeCollectionCell.xib in Resources */,
 				BC426C391C1AAF91007F8285 /* CommunityViewController.xib in Resources */,
 				BC426C421C1AAFC4007F8285 /* ExpertViewController.xib in Resources */,
+				BC2ACD4A1C1EC4FB00E3033B /* HomeSubjectCell.xib in Resources */,
 				BC426C401C1AAFAF007F8285 /* HomeViewController.xib in Resources */,
+				BC2ACD451C1EC4E500E3033B /* HomePageCell.xib in Resources */,
 				BC426C3E1C1AAF9D007F8285 /* MeViewController.xib in Resources */,
 				BCD4A6981C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib in Resources */,
 				D04025371C17DDFC00FF7B43 /* Assets.xcassets in Resources */,
@@ -429,6 +456,7 @@
 				BC426C4B1C1AC3F2007F8285 /* HomeBannerModel.m in Sources */,
 				BCD4A68C1C1E5F2800DE7FAB /* UIView+Addition.m in Sources */,
 				BC426C3D1C1AAF9D007F8285 /* MeViewController.m in Sources */,
+				BC2ACD441C1EC4E500E3033B /* HomePageCell.m in Sources */,
 				BC426C381C1AAF91007F8285 /* CommunityViewController.m in Sources */,
 				D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */,
 				BCD4A68F1C1E68B500DE7FAB /* Factory.m in Sources */,
@@ -442,9 +470,11 @@
 				D040252C1C17DDFC00FF7B43 /* main.m in Sources */,
 				BC426C5A1C1AD106007F8285 /* HomeItemSubjectModel.m in Sources */,
 				BC426C341C1AAF83007F8285 /* ExpertViewController.m in Sources */,
+				BC2ACD3F1C1EC4D300E3033B /* HomeCollectionCell.m in Sources */,
 				BC426C511C1AC6B2007F8285 /* HomeTopModel.m in Sources */,
 				BCD4A6971C1EA36800DE7FAB /* HomeRecommendTableViewCell.m in Sources */,
 				BC426C571C1AC9F4007F8285 /* HomeItemPageModel.m in Sources */,
+				BC2ACD491C1EC4FB00E3033B /* HomeSubjectCell.m in Sources */,
 				BC426C311C1AAEB9007F8285 /* HomeViewController.m in Sources */,
 				BC426C541C1AC91E007F8285 /* HomeItemCollectionModel.m in Sources */,
 			);

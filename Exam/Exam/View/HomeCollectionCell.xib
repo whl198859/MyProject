@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="collection" rowHeight="317" id="KGk-i7-Jjw" customClass="HomeCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1c-9L-BrD">
+                        <rect key="frame" x="10" y="10" width="30.5" height="18"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="xBl-va-Dzo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hlb-K4-SsL">
+                        <rect key="frame" x="10" y="33" width="300" height="146.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-9N-Jnx">
+                        <rect key="frame" x="10" y="189" width="50" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="21o-bG-CkA"/>
+                            <constraint firstAttribute="height" constant="50" id="gOi-2d-k7x"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXb-at-YwP">
+                        <rect key="frame" x="70" y="189" width="64.5" height="14"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="vqu-Mo-vSM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMl-ZX-nfz">
+                        <rect key="frame" x="70" y="218" width="42.5" height="21"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="VaO-oR-7Fs"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LR4-lL-Cu5">
+                        <rect key="frame" x="70" y="216" width="240" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="W2Z-8U-rxe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lMl-ZX-nfz" secondAttribute="trailing" constant="10" id="EB9-7F-7ev"/>
+                    <constraint firstItem="kvd-9N-Jnx" firstAttribute="top" secondItem="Hlb-K4-SsL" secondAttribute="bottom" constant="10" id="G7I-RF-y4X"/>
+                    <constraint firstAttribute="trailing" secondItem="Hlb-K4-SsL" secondAttribute="trailing" constant="10" id="HD5-ZH-5de"/>
+                    <constraint firstItem="lMl-ZX-nfz" firstAttribute="leading" secondItem="kvd-9N-Jnx" secondAttribute="trailing" constant="10" id="INp-B2-fWQ"/>
+                    <constraint firstItem="Hlb-K4-SsL" firstAttribute="top" secondItem="T1c-9L-BrD" secondAttribute="bottom" constant="5" id="Jx4-5i-wwO"/>
+                    <constraint firstItem="kvd-9N-Jnx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="MSa-Ve-0m8"/>
+                    <constraint firstItem="lMl-ZX-nfz" firstAttribute="leading" secondItem="LR4-lL-Cu5" secondAttribute="leading" id="OKp-84-uH6"/>
+                    <constraint firstAttribute="bottom" secondItem="Hlb-K4-SsL" secondAttribute="bottom" constant="70" id="PEj-7g-yH6"/>
+                    <constraint firstAttribute="bottom" secondItem="kvd-9N-Jnx" secondAttribute="bottom" constant="10" id="T2w-GX-9qq"/>
+                    <constraint firstItem="T1c-9L-BrD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="WNY-pu-zLx"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="T1c-9L-BrD" secondAttribute="trailing" constant="10" id="bc0-eN-WzN"/>
+                    <constraint firstItem="T1c-9L-BrD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="e2N-2K-pZQ"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xXb-at-YwP" secondAttribute="trailing" constant="10" id="ect-Qg-Q4y"/>
+                    <constraint firstAttribute="trailing" secondItem="LR4-lL-Cu5" secondAttribute="trailing" constant="10" id="hxR-Om-NEb"/>
+                    <constraint firstItem="xXb-at-YwP" firstAttribute="top" secondItem="kvd-9N-Jnx" secondAttribute="top" id="ibM-wp-pTV"/>
+                    <constraint firstItem="lMl-ZX-nfz" firstAttribute="bottom" secondItem="kvd-9N-Jnx" secondAttribute="bottom" id="jZa-lr-Lmt"/>
+                    <constraint firstItem="lMl-ZX-nfz" firstAttribute="top" secondItem="LR4-lL-Cu5" secondAttribute="bottom" constant="1" id="kKR-nN-hBn"/>
+                    <constraint firstItem="xXb-at-YwP" firstAttribute="leading" secondItem="kvd-9N-Jnx" secondAttribute="trailing" constant="10" id="t47-56-dgQ"/>
+                    <constraint firstItem="Hlb-K4-SsL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="tL6-ny-sRn"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="PEj-7g-yH6"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="authorFace" destination="kvd-9N-Jnx" id="JiW-oL-0rN"/>
+                <outlet property="covImage" destination="Hlb-K4-SsL" id="9lg-K5-vhV"/>
+                <outlet property="nickName" destination="xXb-at-YwP" id="fZa-jL-KaR"/>
+                <outlet property="subtitle" destination="lMl-ZX-nfz" id="vnI-aQ-PIm"/>
+                <outlet property="title" destination="T1c-9L-BrD" id="lbu-jr-bd6"/>
+            </connections>
+            <point key="canvasLocation" x="142" y="199.5"/>
+        </tableViewCell>
+    </objects>
+</document>

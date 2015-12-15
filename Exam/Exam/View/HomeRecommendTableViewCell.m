@@ -27,19 +27,27 @@
 }
 
 - (IBAction)firstButtonDidClicked:(id)sender {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(firstButtonDidClicked)]) {
+        [_delegate firstButtonDidClicked];
+    }
 }
 
 - (IBAction)secondButtonDidClicked:(id)sender {
-
+    if (_delegate && [_delegate respondsToSelector:@selector(secondButtonDidClicked)]) {
+        [_delegate secondButtonDidClicked];
+    }
 }
 
 - (IBAction)thirdButtonDidClicked:(id)sender {
-
+    if (_delegate && [_delegate respondsToSelector:@selector(thirdButtonDidClicked)]) {
+        [_delegate thirdButtonDidClicked];
+    }
 }
 
 - (IBAction)fourButtonDidClicked:(id)sender {
-
+    if (_delegate && [_delegate respondsToSelector:@selector(firstButtonDidClicked)]) {
+        [_delegate firstButtonDidClicked];
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

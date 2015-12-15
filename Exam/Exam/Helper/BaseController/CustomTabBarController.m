@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.tabBar.barTintColor = RGB(106, 227, 158);
     self.tabBar.translucent = NO;
-    
+
     //创建子视图控制器
     [self createSubViewController];
 }

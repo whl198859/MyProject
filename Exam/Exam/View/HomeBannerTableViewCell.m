@@ -32,7 +32,7 @@
             HomeBannerModel *model = [self.dataSource objectAtIndex:i];
             UIImageView *image = [self.scrollView viewWithTag:ImageViewTagValue + i];
             if (!image) {
-                image = [[UIImageView alloc] initWithFrame:CGRectMake(i * ScreenWidth, 0, ScreenWidth, 170)];
+                image = [[UIImageView alloc] initWithFrame:CGRectMake(i * ScreenWidth, 0, ScreenWidth, 180)];
                 image.tag = ImageViewTagValue + i;
                 [self.scrollView addSubview:image];
             }

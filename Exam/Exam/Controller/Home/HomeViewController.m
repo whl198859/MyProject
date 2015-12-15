@@ -17,8 +17,11 @@
 #import "HomeItemSubjectModel.h"
 #import "HomeBannerTableViewCell.h"
 #import "HomeRecommendTableViewCell.h"
+#import "HomeCollectionCell.h"
+#import "HomeSubjectCell.h"
+#import "HomePageCell.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate> {
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, HomeRecommendTableViewCellDelegate> {
     NSInteger _pageNumber;
 }
 
@@ -40,6 +43,9 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Identifier"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeBannerTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"banner"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeRecommendTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"recommend"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomeCollectionCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"collection"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomeSubjectCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"subject"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HomePageCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"page"];
 }
 
 - (void)initData {
@@ -108,29 +114,65 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = nil;
     if (indexPath.row == 0) {
-        HomeBannerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"banner" forIndexPath:indexPath];
-        [cell setBannerData:self.banner];
-        return cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"banner" forIndexPath:indexPath];
+        [(HomeBannerTableViewCell *)cell setBannerData:self.banner];
     } else if (indexPath.row == 1) {
-        HomeRecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"recommend" forIndexPath:indexPath];
-        [cell setRecommendData:self.recommend];
-        return cell;
+        cell = [tableView dequeueReusableCellWithIdentifier:@"recommend" forIndexPath:indexPath];
+        [(HomeRecommendTableViewCell *)cell setRecommendData:self.recommend];
     } else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Identifier" forIndexPath:indexPath];
-        NSLog(@"%@", [[self.dataSource objectAtIndex:indexPath.row - 2] class]);
-        return cell;
+        id object = [self.dataSource objectAtIndex:indexPath.row - 2];
+        if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"collection" forIndexPath:indexPath];
+            [(HomeCollectionCell *)cell setCollectionCellData:object];
+        } else if ([object isKindOfClass:[HomeItemPageModel class]]) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"page" forIndexPath:indexPath];
+            [(HomePageCell *)cell setPageCellData:object];
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"subject" forIndexPath:indexPath];
+            [(HomeSubjectCell *)cell setSubjectCellData:object];
+        }
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        return 170.f;
+        return 180.f;
     } else if (indexPath.row == 1) {
         return 190.f;
     } else {
-        return 44.f;
+        id object = [self.dataSource objectAtIndex:indexPath.row - 2];
+        if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
+            return 290.f;
+        } else {
+            return 250.f;
+        }
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row != 1 && indexPath.row != 0) {
+        
+    }
+}
+
+#pragma mark - HomeRecommendTableViewCellDelegate
+- (void)firstButtonDidClicked {
+
+}
+
+- (void)secondButtonDidClicked {
+
+}
+
+- (void)thirdButtonDidClicked {
+
+}
+
+- (void)fourButtonDidClicked {
+    
+}
 @end
