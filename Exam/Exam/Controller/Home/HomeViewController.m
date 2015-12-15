@@ -155,7 +155,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row != 1 && indexPath.row != 0) {
-        
+        id object = [self.dataSource objectAtIndex:indexPath.row - 2];
+        if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
+            
+        } else if ([object isKindOfClass:[HomeItemPageModel class]]) {
+            
+        } else {
+            
+        }
     }
 }
 
