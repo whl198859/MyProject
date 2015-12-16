@@ -41,6 +41,7 @@
     [super viewDidLoad];
     
     self.title = @"首页";
+    [self createNavigationLeftButton:nil];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Identifier"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeBannerTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"banner"];
@@ -152,9 +153,9 @@
     } else {
         id object = [self.dataSource objectAtIndex:indexPath.section - 2];
         if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
-            return 300.f;
+            return 340.f;
         } else {
-            return 250.f;
+            return 270.f;
         }
     }
 }
@@ -163,7 +164,7 @@
     if (indexPath.section != 1 && indexPath.section != 0) {
         id object = [self.dataSource objectAtIndex:indexPath.section - 2];
         if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
-            CollectionDetailViewController *cvc = [[CollectionDetailViewController alloc] initWithCollectionID:[(HomeItemCollectionModel *)object caseID]];
+            CollectionDetailViewController *cvc = [[CollectionDetailViewController alloc] initWithCollectionID:[(HomeItemCollectionModel *)object caseID] title:[(HomeItemCollectionModel *)object title]];
             cvc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:cvc animated:YES];
         } else if ([object isKindOfClass:[HomeItemPageModel class]]) {

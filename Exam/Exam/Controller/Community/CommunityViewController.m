@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"专区";
+    [self createNavigationLeftButton:nil];
 }
 
 - (void)didReceiveMemoryWarning {

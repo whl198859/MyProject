@@ -41,6 +41,11 @@
 		BCD4A6981C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD4A6961C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib */; };
 		BCF8C1FB1C20FF7B00DB96EB /* CollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C1F91C20FF7B00DB96EB /* CollectionDetailViewController.m */; };
 		BCF8C1FC1C20FF7B00DB96EB /* CollectionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C1FA1C20FF7B00DB96EB /* CollectionDetailViewController.xib */; };
+		BCF8C2031C211C2A00DB96EB /* barbuttonicon_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C2011C211C2A00DB96EB /* barbuttonicon_back@2x.png */; };
+		BCF8C2041C211C2A00DB96EB /* barbuttonicon_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C2021C211C2A00DB96EB /* barbuttonicon_back@3x.png */; };
+		BCF8C2071C21409C00DB96EB /* CollectionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C2061C21409C00DB96EB /* CollectionDetailModel.m */; };
+		BCF8C20A1C21469900DB96EB /* CollectionPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C2091C21469900DB96EB /* CollectionPhotoModel.m */; };
+		BCF8C20D1C21478500DB96EB /* BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C20C1C21478500DB96EB /* BackButton.m */; };
 		D040252C1C17DDFC00FF7B43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252B1C17DDFC00FF7B43 /* main.m */; };
 		D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252E1C17DDFC00FF7B43 /* AppDelegate.m */; };
 		D04025371C17DDFC00FF7B43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04025361C17DDFC00FF7B43 /* Assets.xcassets */; };
@@ -109,6 +114,14 @@
 		BCF8C1F81C20FF7B00DB96EB /* CollectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetailViewController.h; sourceTree = "<group>"; };
 		BCF8C1F91C20FF7B00DB96EB /* CollectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetailViewController.m; sourceTree = "<group>"; };
 		BCF8C1FA1C20FF7B00DB96EB /* CollectionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionDetailViewController.xib; sourceTree = "<group>"; };
+		BCF8C2011C211C2A00DB96EB /* barbuttonicon_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbuttonicon_back@2x.png"; sourceTree = "<group>"; };
+		BCF8C2021C211C2A00DB96EB /* barbuttonicon_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barbuttonicon_back@3x.png"; sourceTree = "<group>"; };
+		BCF8C2051C21409C00DB96EB /* CollectionDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetailModel.h; sourceTree = "<group>"; };
+		BCF8C2061C21409C00DB96EB /* CollectionDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetailModel.m; sourceTree = "<group>"; };
+		BCF8C2081C21469900DB96EB /* CollectionPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionPhotoModel.h; sourceTree = "<group>"; };
+		BCF8C2091C21469900DB96EB /* CollectionPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionPhotoModel.m; sourceTree = "<group>"; };
+		BCF8C20B1C21478500DB96EB /* BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
+		BCF8C20C1C21478500DB96EB /* BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackButton.m; sourceTree = "<group>"; };
 		D04025271C17DDFC00FF7B43 /* Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D040252B1C17DDFC00FF7B43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D040252D1C17DDFC00FF7B43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -150,6 +163,8 @@
 		BC36E4F31C1A680A00CC3D90 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
+				BCF8C20B1C21478500DB96EB /* BackButton.h */,
+				BCF8C20C1C21478500DB96EB /* BackButton.m */,
 				BC36E4F41C1A684000CC3D90 /* BaseViewController.h */,
 				BC36E4F51C1A684000CC3D90 /* BaseViewController.m */,
 				BC426C251C1A9EF6007F8285 /* CustomTabBarController.h */,
@@ -275,8 +290,21 @@
 				BC426C561C1AC9F4007F8285 /* HomeItemPageModel.m */,
 				BC426C581C1AD106007F8285 /* HomeItemSubjectModel.h */,
 				BC426C591C1AD106007F8285 /* HomeItemSubjectModel.m */,
+				BCF8C2051C21409C00DB96EB /* CollectionDetailModel.h */,
+				BCF8C2061C21409C00DB96EB /* CollectionDetailModel.m */,
+				BCF8C2081C21469900DB96EB /* CollectionPhotoModel.h */,
+				BCF8C2091C21469900DB96EB /* CollectionPhotoModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BCF8C2001C211C1E00DB96EB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				BCF8C2011C211C2A00DB96EB /* barbuttonicon_back@2x.png */,
+				BCF8C2021C211C2A00DB96EB /* barbuttonicon_back@3x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		C2567BCE3F84886083459EDF /* Pods */ = {
@@ -309,6 +337,7 @@
 		D04025291C17DDFC00FF7B43 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
+				BCF8C2001C211C1E00DB96EB /* Resource */,
 				BC426C451C1AC3B2007F8285 /* Model */,
 				BC426C431C1ABEB2007F8285 /* NetRequest */,
 				BC36E4F91C1A6F7100CC3D90 /* Controller */,
@@ -394,12 +423,14 @@
 			files = (
 				D040253A1C17DDFC00FF7B43 /* LaunchScreen.storyboard in Resources */,
 				BCF8C1FC1C20FF7B00DB96EB /* CollectionDetailViewController.xib in Resources */,
+				BCF8C2031C211C2A00DB96EB /* barbuttonicon_back@2x.png in Resources */,
 				BC2ACD401C1EC4D300E3033B /* HomeCollectionCell.xib in Resources */,
 				BC426C391C1AAF91007F8285 /* CommunityViewController.xib in Resources */,
 				BC426C421C1AAFC4007F8285 /* ExpertViewController.xib in Resources */,
 				BC2ACD4A1C1EC4FB00E3033B /* HomeSubjectCell.xib in Resources */,
 				BC426C401C1AAFAF007F8285 /* HomeViewController.xib in Resources */,
 				BC2ACD451C1EC4E500E3033B /* HomePageCell.xib in Resources */,
+				BCF8C2041C211C2A00DB96EB /* barbuttonicon_back@3x.png in Resources */,
 				BC426C3E1C1AAF9D007F8285 /* MeViewController.xib in Resources */,
 				BCD4A6981C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib in Resources */,
 				D04025371C17DDFC00FF7B43 /* Assets.xcassets in Resources */,
@@ -466,6 +497,7 @@
 				BCD4A68C1C1E5F2800DE7FAB /* UIView+Addition.m in Sources */,
 				BC426C3D1C1AAF9D007F8285 /* MeViewController.m in Sources */,
 				BC2ACD441C1EC4E500E3033B /* HomePageCell.m in Sources */,
+				BCF8C2071C21409C00DB96EB /* CollectionDetailModel.m in Sources */,
 				BC426C381C1AAF91007F8285 /* CommunityViewController.m in Sources */,
 				BCF8C1FB1C20FF7B00DB96EB /* CollectionDetailViewController.m in Sources */,
 				D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */,
@@ -473,9 +505,11 @@
 				BC426C271C1A9EF6007F8285 /* CustomTabBarController.m in Sources */,
 				BC36E4F61C1A684000CC3D90 /* BaseViewController.m in Sources */,
 				BC426C5D1C1AD460007F8285 /* HomeDataModel.m in Sources */,
+				BCF8C20D1C21478500DB96EB /* BackButton.m in Sources */,
 				BC426C481C1AC3C4007F8285 /* HomePageModel.m in Sources */,
 				BC426C4E1C1AC635007F8285 /* HomeRecommendModel.m in Sources */,
 				BC426C2A1C1A9F0D007F8285 /* CustomNavigationController.m in Sources */,
+				BCF8C20A1C21469900DB96EB /* CollectionPhotoModel.m in Sources */,
 				BC7D41191C1E5748008C7B23 /* HomeBannerTableViewCell.m in Sources */,
 				D040252C1C17DDFC00FF7B43 /* main.m in Sources */,
 				BC426C5A1C1AD106007F8285 /* HomeItemSubjectModel.m in Sources */,

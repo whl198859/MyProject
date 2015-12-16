@@ -10,6 +10,6 @@
 
 @interface CollectionDetailViewController : BaseViewController
 
-- (instancetype)initWithCollectionID:(NSString *)collectionID;
+- (instancetype)initWithCollectionID:(NSString *)collectionID title:(NSString *)title;
 
 @end

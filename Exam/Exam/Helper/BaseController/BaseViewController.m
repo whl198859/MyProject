@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "BackButton.h"
 
 @interface BaseViewController ()
 
@@ -33,6 +34,8 @@
     self.navigationController.navigationBar.barTintColor = RGB(106, 227, 158);
     self.navigationController.navigationBar.translucent = NO;
     
+    [self createBackButton];
+    
     //加载数据
     [self initData];
     
@@ -41,6 +44,12 @@
     
     //添加行为
     [self addTouchAction];
+}
+
+- (void)createBackButton {
+    BackButton *back = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [back addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    [self createNavigationLeftButton:back];
 }
 
 //创建视图
@@ -68,6 +77,49 @@
     //不做实现，只为了取消警告
 }
 
+//创建上导航的左侧按钮
+- (void)createNavigationBarLeftBarButtonItemWithTitle:(NSString *)title {
+    [self createNavigationBarLeftBarButtonItemWithTitle:title style:UIBarButtonItemStylePlain];
+}
+
+- (void)createNavigationBarLeftBarButtonItemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style {
+    [self createNavigationBarLeftBarButtonItemWithTitle:title style:style target:self action:@selector(backAction)];
+}
+
+- (void)createNavigationBarLeftBarButtonItemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+    //这个可以简单的理解为特殊的按钮，不需要我们去考虑布局，只要实现样式和内容，系统为我们进行布局。
+    UIBarButtonItem *left = [[UIBarButtonItem alloc] initWithTitle:title style:style target:target action:action];
+    self.navigationItem.leftBarButtonItem = left;
+}
+
+/*********** 新增 ***********/
+//创建上导航左侧按钮(以view作模板)
+- (void)createNavigationLeftButton:(id)view {
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:view];
+    self.navigationItem.leftBarButtonItem = leftItem;
+}
+
+//创建上导航的右侧按钮
+- (void)createNavigationBarRightBarButtonItemWithTitle:(NSString *)title {
+    [self createNavigationBarLeftBarButtonItemWithTitle:title style:UIBarButtonItemStylePlain];
+}
+
+- (void)createNavigationBarRightBarButtonItemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style {
+    [self createNavigationBarLeftBarButtonItemWithTitle:title style:style target:self action:@selector(rightAction)];
+}
+
+- (void)createNavigationBarRightBarButtonItemWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style target:(id)target action:(SEL)action {
+    //这个可以简单的理解为特殊的按钮，不需要我们去考虑布局，只要实现样式和内容，系统为我们进行布局。
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithTitle:title style:style target:target action:action];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
+//创建上导航右侧按钮(以view作模板)
+- (void)createNavigationRightButton:(id)view {
+    UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithCustomView:view];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
 #pragma mark - 键盘通知回调
 - (void)keyboardWillShowAction:(NSNotification *)notification {
     //键盘将要显示
@@ -76,6 +128,22 @@
 - (void)keyboardWillHideAction:(NSNotification *)notification {
     //键盘将要隐藏
 }
+
+#pragma mark - 上导航左侧按钮和右侧按钮的行为
+- (void)leftAction {
+    //不做实现，只为了取消警告
+}
+
+- (void)rightAction {
+    //不做实现，只为了取消警告
+}
+
+#pragma mark - 返回按钮
+- (void)backAction {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
