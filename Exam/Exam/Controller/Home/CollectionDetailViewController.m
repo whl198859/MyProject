@@ -1,22 +1,32 @@
 //
-//  CommunityViewController.m
+//  CollectionDetailViewController.m
 //  Exam
 //
-//  Created by wanghailong on 15/12/11.
+//  Created by wanghailong on 15/12/16.
 //  Copyright © 2015年 Hailong.wang. All rights reserved.
 //
 
-#import "CommunityViewController.h"
+#import "CollectionDetailViewController.h"
 
-@interface CommunityViewController ()
+@interface CollectionDetailViewController ()
+
+@property (nonatomic, copy) NSString *collectionId;
 
 @end
 
-@implementation CommunityViewController
+@implementation CollectionDetailViewController
+
+- (instancetype)initWithCollectionID:(NSString *)collectionID {
+    self = [super init];
+    if (self) {
+        self.collectionId = collectionID;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"专区";
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

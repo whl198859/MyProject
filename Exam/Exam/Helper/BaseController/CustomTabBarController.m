@@ -32,11 +32,14 @@
     NSMutableArray *subControllers = [[NSMutableArray alloc] initWithCapacity:0];
     //子视图控制器名称
     NSArray *controllers = @[@"HomeViewController", @"ExpertViewController", @"CommunityViewController", @"MeViewController"];
+    //子视图控制器的按钮title
+    NSArray *controllerTitle = @[@"首页", @"专家", @"专区", @"个人中心"];
     //循环创建子视图控制器
     for (int i = 0; i < controllers.count; i ++) {
         Class cls = NSClassFromString(controllers[i]);
         UIViewController *controller = [[cls alloc] init];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+        nav.tabBarItem = [[UITabBarItem alloc] initWithTitle:[controllerTitle objectAtIndex:i] image:nil selectedImage:nil];
         [subControllers addObject:nav];
     }
     self.viewControllers = subControllers;

@@ -21,6 +21,8 @@
 #import "HomeSubjectCell.h"
 #import "HomePageCell.h"
 
+#import "CollectionDetailViewController.h"
+
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, HomeRecommendTableViewCellDelegate> {
     NSInteger _pageNumber;
 }
@@ -38,7 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"集美家";
+    self.title = @"首页";
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Identifier"];
     [self.tableView registerNib:[UINib nibWithNibName:@"HomeBannerTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"banner"];
@@ -99,7 +101,7 @@
 }
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     NSInteger number = 0;
     if (self.banner) {
         number ++;
@@ -113,16 +115,20 @@
     return number;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"banner" forIndexPath:indexPath];
         [(HomeBannerTableViewCell *)cell setBannerData:self.banner];
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"recommend" forIndexPath:indexPath];
         [(HomeRecommendTableViewCell *)cell setRecommendData:self.recommend];
     } else {
-        id object = [self.dataSource objectAtIndex:indexPath.row - 2];
+        id object = [self.dataSource objectAtIndex:indexPath.section - 2];
         if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"collection" forIndexPath:indexPath];
             [(HomeCollectionCell *)cell setCollectionCellData:object];
@@ -139,14 +145,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         return 180.f;
-    } else if (indexPath.row == 1) {
+    } else if (indexPath.section == 1) {
         return 190.f;
     } else {
-        id object = [self.dataSource objectAtIndex:indexPath.row - 2];
+        id object = [self.dataSource objectAtIndex:indexPath.section - 2];
         if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
-            return 290.f;
+            return 300.f;
         } else {
             return 250.f;
         }
@@ -154,10 +160,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row != 1 && indexPath.row != 0) {
-        id object = [self.dataSource objectAtIndex:indexPath.row - 2];
+    if (indexPath.section != 1 && indexPath.section != 0) {
+        id object = [self.dataSource objectAtIndex:indexPath.section - 2];
         if ([object isKindOfClass:[HomeItemCollectionModel class]]) {
-            
+            CollectionDetailViewController *cvc = [[CollectionDetailViewController alloc] initWithCollectionID:[(HomeItemCollectionModel *)object caseID]];
+            cvc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:cvc animated:YES];
         } else if ([object isKindOfClass:[HomeItemPageModel class]]) {
             
         } else {

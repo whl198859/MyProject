@@ -39,6 +39,8 @@
 		BCD4A6931C1E903600DE7FAB /* HomeBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD4A6921C1E903600DE7FAB /* HomeBannerTableViewCell.xib */; };
 		BCD4A6971C1EA36800DE7FAB /* HomeRecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD4A6951C1EA36800DE7FAB /* HomeRecommendTableViewCell.m */; };
 		BCD4A6981C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD4A6961C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib */; };
+		BCF8C1FB1C20FF7B00DB96EB /* CollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C1F91C20FF7B00DB96EB /* CollectionDetailViewController.m */; };
+		BCF8C1FC1C20FF7B00DB96EB /* CollectionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C1FA1C20FF7B00DB96EB /* CollectionDetailViewController.xib */; };
 		D040252C1C17DDFC00FF7B43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252B1C17DDFC00FF7B43 /* main.m */; };
 		D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252E1C17DDFC00FF7B43 /* AppDelegate.m */; };
 		D04025371C17DDFC00FF7B43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04025361C17DDFC00FF7B43 /* Assets.xcassets */; };
@@ -104,6 +106,9 @@
 		BCD4A6941C1EA36800DE7FAB /* HomeRecommendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRecommendTableViewCell.h; sourceTree = "<group>"; };
 		BCD4A6951C1EA36800DE7FAB /* HomeRecommendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRecommendTableViewCell.m; sourceTree = "<group>"; };
 		BCD4A6961C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRecommendTableViewCell.xib; sourceTree = "<group>"; };
+		BCF8C1F81C20FF7B00DB96EB /* CollectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetailViewController.h; sourceTree = "<group>"; };
+		BCF8C1F91C20FF7B00DB96EB /* CollectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetailViewController.m; sourceTree = "<group>"; };
+		BCF8C1FA1C20FF7B00DB96EB /* CollectionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionDetailViewController.xib; sourceTree = "<group>"; };
 		D04025271C17DDFC00FF7B43 /* Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D040252B1C17DDFC00FF7B43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D040252D1C17DDFC00FF7B43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -226,6 +231,9 @@
 				BC426C2F1C1AAEB9007F8285 /* HomeViewController.h */,
 				BC426C301C1AAEB9007F8285 /* HomeViewController.m */,
 				BC426C3F1C1AAFAF007F8285 /* HomeViewController.xib */,
+				BCF8C1F81C20FF7B00DB96EB /* CollectionDetailViewController.h */,
+				BCF8C1F91C20FF7B00DB96EB /* CollectionDetailViewController.m */,
+				BCF8C1FA1C20FF7B00DB96EB /* CollectionDetailViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -385,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D040253A1C17DDFC00FF7B43 /* LaunchScreen.storyboard in Resources */,
+				BCF8C1FC1C20FF7B00DB96EB /* CollectionDetailViewController.xib in Resources */,
 				BC2ACD401C1EC4D300E3033B /* HomeCollectionCell.xib in Resources */,
 				BC426C391C1AAF91007F8285 /* CommunityViewController.xib in Resources */,
 				BC426C421C1AAFC4007F8285 /* ExpertViewController.xib in Resources */,
@@ -458,6 +467,7 @@
 				BC426C3D1C1AAF9D007F8285 /* MeViewController.m in Sources */,
 				BC2ACD441C1EC4E500E3033B /* HomePageCell.m in Sources */,
 				BC426C381C1AAF91007F8285 /* CommunityViewController.m in Sources */,
+				BCF8C1FB1C20FF7B00DB96EB /* CollectionDetailViewController.m in Sources */,
 				D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */,
 				BCD4A68F1C1E68B500DE7FAB /* Factory.m in Sources */,
 				BC426C271C1A9EF6007F8285 /* CustomTabBarController.m in Sources */,
