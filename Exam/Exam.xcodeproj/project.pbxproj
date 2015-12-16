@@ -46,6 +46,10 @@
 		BCF8C2071C21409C00DB96EB /* CollectionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C2061C21409C00DB96EB /* CollectionDetailModel.m */; };
 		BCF8C20A1C21469900DB96EB /* CollectionPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C2091C21469900DB96EB /* CollectionPhotoModel.m */; };
 		BCF8C20D1C21478500DB96EB /* BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C20C1C21478500DB96EB /* BackButton.m */; };
+		BCF8C2111C21548200DB96EB /* CollectionAuthorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C20F1C21548200DB96EB /* CollectionAuthorCell.m */; };
+		BCF8C2121C21548200DB96EB /* CollectionAuthorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C2101C21548200DB96EB /* CollectionAuthorCell.xib */; };
+		BCF8C2161C2154C000DB96EB /* CollectionImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF8C2141C2154C000DB96EB /* CollectionImageCell.m */; };
+		BCF8C2171C2154C000DB96EB /* CollectionImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF8C2151C2154C000DB96EB /* CollectionImageCell.xib */; };
 		D040252C1C17DDFC00FF7B43 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252B1C17DDFC00FF7B43 /* main.m */; };
 		D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D040252E1C17DDFC00FF7B43 /* AppDelegate.m */; };
 		D04025371C17DDFC00FF7B43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D04025361C17DDFC00FF7B43 /* Assets.xcassets */; };
@@ -122,6 +126,12 @@
 		BCF8C2091C21469900DB96EB /* CollectionPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionPhotoModel.m; sourceTree = "<group>"; };
 		BCF8C20B1C21478500DB96EB /* BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
 		BCF8C20C1C21478500DB96EB /* BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackButton.m; sourceTree = "<group>"; };
+		BCF8C20E1C21548200DB96EB /* CollectionAuthorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionAuthorCell.h; sourceTree = "<group>"; };
+		BCF8C20F1C21548200DB96EB /* CollectionAuthorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionAuthorCell.m; sourceTree = "<group>"; };
+		BCF8C2101C21548200DB96EB /* CollectionAuthorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionAuthorCell.xib; sourceTree = "<group>"; };
+		BCF8C2131C2154C000DB96EB /* CollectionImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionImageCell.h; sourceTree = "<group>"; };
+		BCF8C2141C2154C000DB96EB /* CollectionImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionImageCell.m; sourceTree = "<group>"; };
+		BCF8C2151C2154C000DB96EB /* CollectionImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionImageCell.xib; sourceTree = "<group>"; };
 		D04025271C17DDFC00FF7B43 /* Exam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D040252B1C17DDFC00FF7B43 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D040252D1C17DDFC00FF7B43 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +226,12 @@
 				BC2ACD461C1EC4FB00E3033B /* HomeSubjectCell.h */,
 				BC2ACD471C1EC4FB00E3033B /* HomeSubjectCell.m */,
 				BC2ACD481C1EC4FB00E3033B /* HomeSubjectCell.xib */,
+				BCF8C20E1C21548200DB96EB /* CollectionAuthorCell.h */,
+				BCF8C20F1C21548200DB96EB /* CollectionAuthorCell.m */,
+				BCF8C2101C21548200DB96EB /* CollectionAuthorCell.xib */,
+				BCF8C2131C2154C000DB96EB /* CollectionImageCell.h */,
+				BCF8C2141C2154C000DB96EB /* CollectionImageCell.m */,
+				BCF8C2151C2154C000DB96EB /* CollectionImageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -395,6 +411,7 @@
 				TargetAttributes = {
 					D04025261C17DDFC00FF7B43 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = JCHMEF85JY;
 					};
 				};
 			};
@@ -428,8 +445,10 @@
 				BC426C391C1AAF91007F8285 /* CommunityViewController.xib in Resources */,
 				BC426C421C1AAFC4007F8285 /* ExpertViewController.xib in Resources */,
 				BC2ACD4A1C1EC4FB00E3033B /* HomeSubjectCell.xib in Resources */,
+				BCF8C2171C2154C000DB96EB /* CollectionImageCell.xib in Resources */,
 				BC426C401C1AAFAF007F8285 /* HomeViewController.xib in Resources */,
 				BC2ACD451C1EC4E500E3033B /* HomePageCell.xib in Resources */,
+				BCF8C2121C21548200DB96EB /* CollectionAuthorCell.xib in Resources */,
 				BCF8C2041C211C2A00DB96EB /* barbuttonicon_back@3x.png in Resources */,
 				BC426C3E1C1AAF9D007F8285 /* MeViewController.xib in Resources */,
 				BCD4A6981C1EA36800DE7FAB /* HomeRecommendTableViewCell.xib in Resources */,
@@ -502,10 +521,12 @@
 				BCF8C1FB1C20FF7B00DB96EB /* CollectionDetailViewController.m in Sources */,
 				D040252F1C17DDFC00FF7B43 /* AppDelegate.m in Sources */,
 				BCD4A68F1C1E68B500DE7FAB /* Factory.m in Sources */,
+				BCF8C2161C2154C000DB96EB /* CollectionImageCell.m in Sources */,
 				BC426C271C1A9EF6007F8285 /* CustomTabBarController.m in Sources */,
 				BC36E4F61C1A684000CC3D90 /* BaseViewController.m in Sources */,
 				BC426C5D1C1AD460007F8285 /* HomeDataModel.m in Sources */,
 				BCF8C20D1C21478500DB96EB /* BackButton.m in Sources */,
+				BCF8C2111C21548200DB96EB /* CollectionAuthorCell.m in Sources */,
 				BC426C481C1AC3C4007F8285 /* HomePageModel.m in Sources */,
 				BC426C4E1C1AC635007F8285 /* HomeRecommendModel.m in Sources */,
 				BC426C2A1C1A9F0D007F8285 /* CustomNavigationController.m in Sources */,
@@ -574,7 +595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -611,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -623,12 +644,15 @@
 			baseConfigurationReference = 696AF8AE5E91B98BB20DA4EC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Exam/Helper/Tools/DefineHeader.pch";
 				INFOPLIST_FILE = Exam/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HailongExcellency.Exam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -637,12 +661,15 @@
 			baseConfigurationReference = 69A8AA77B41090C4AE426829 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Exam/Helper/Tools/DefineHeader.pch";
 				INFOPLIST_FILE = Exam/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = HailongExcellency.Exam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

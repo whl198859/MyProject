@@ -6,9 +6,9 @@
 //  Copyright © 2015年 Hailong.wang. All rights reserved.
 //
 
-#import <JSONModel/JSONModel.h>
+#import <Foundation/Foundation.h>
 
-@interface CollectionDetailModel : JSONModel
+@interface CollectionDetailModel : NSObject
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *summary;
@@ -18,5 +18,7 @@
 @property (nonatomic, copy) NSString *photoCount;
 @property (nonatomic, copy) NSString *viewCount;
 @property (nonatomic, copy) NSString *likeCount;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
 
 @end

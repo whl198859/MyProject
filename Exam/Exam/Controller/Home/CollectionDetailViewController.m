@@ -7,11 +7,18 @@
 //
 
 #import "CollectionDetailViewController.h"
+#import "CollectionDetailModel.h"
+#import "CollectionPhotoModel.h"
+#import <JSONModelArray.h>
+#import "CollectionAuthorCell.h"
+#import "CollectionImageCell.h"
 
-@interface CollectionDetailViewController ()
+@interface CollectionDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, copy) NSString *collectionId;
 @property (nonatomic, copy) NSString *titleText;
+@property (nonatomic, strong) CollectionDetailModel *detail;
+@property (nonatomic, strong) JSONModelArray *photos;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -38,17 +45,21 @@
 }
 
 - (void)getNetData {
+    __weak typeof(self) weakSelf = self;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:kHomeCollectionDetail parameters:@{@"col_id":self.collectionId, @"tab":@"photo"} progress:NULL success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"%@", task.currentRequest.URL.absoluteString);
+        NSDictionary *data = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        weakSelf.detail = [[CollectionDetailModel alloc] initWithDictionary:[[data objectForKey:@"collection_info"] objectForKey:@"info"]];
+        weakSelf.photos = [[JSONModelArray alloc] initWithArray:[[[data objectForKey:@"collection_photos2"] objectForKey:@"photos"] objectForKey:@"value"] modelClass:[CollectionPhotoModel class]];
+        [weakSelf.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
 }
 
 - (void)createView {
-    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
 }
 
 - (void)addTouchAction {
@@ -60,14 +71,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UITableViewDelegate & UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
 }
-*/
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 4;
+    } else if (section == 1) {
+        return 1;
+    } else {
+        return 1;
+    }
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    return cell;
+}
 
 @end

@@ -10,4 +10,8 @@
 
 @implementation CollectionPhotoModel
 
++ (JSONKeyMapper *)keyMapper {
+    return [[JSONKeyMapper alloc] initWithDictionary:@{@"pic_detail":@"originPic"}];
+}
+
 @end

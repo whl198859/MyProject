@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="header" id="KGk-i7-Jjw" customClass="CollectionImageCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="470"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="469.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yxd-oj-3Pt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="469.5"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="yxd-oj-3Pt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="G90-89-uHk"/>
+                    <constraint firstAttribute="trailing" secondItem="yxd-oj-3Pt" secondAttribute="trailing" id="S4d-R0-Wox"/>
+                    <constraint firstAttribute="bottom" secondItem="yxd-oj-3Pt" secondAttribute="bottom" id="kOR-Bw-gdA"/>
+                    <constraint firstItem="yxd-oj-3Pt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sZ1-Wu-9PK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cover" destination="yxd-oj-3Pt" id="9by-EQ-qHB"/>
+            </connections>
+            <point key="canvasLocation" x="379" y="166"/>
+        </tableViewCell>
+    </objects>
+</document>
