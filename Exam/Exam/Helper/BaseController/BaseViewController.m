@@ -31,9 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.barTintColor = RGB(106, 227, 158);
-    self.navigationController.navigationBar.translucent = NO;
-    
+    //设置上导航的颜色
+    [self setNavigationBarColor];
+    //设置上导航的title和阴影
+    [self setTitleColorAndShadow];
+    //创建返回按钮
     [self createBackButton];
     
     //加载数据
@@ -46,6 +48,22 @@
     [self addTouchAction];
 }
 
+//设置上导航的颜色
+- (void)setNavigationBarColor {
+    self.navigationController.navigationBar.barTintColor = RGB(106, 227, 158);
+    self.navigationController.navigationBar.translucent = NO;
+}
+
+//设置上导航的title和阴影
+- (void)setTitleColorAndShadow {
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = BlackColor;
+    shadow.shadowOffset = CGSizeMake(0.5, 0.5);
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:WhiteColor, NSShadowAttributeName:shadow};
+    
+}
+
+//创建返回箭头的按钮
 - (void)createBackButton {
     BackButton *back = [[BackButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [back addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
